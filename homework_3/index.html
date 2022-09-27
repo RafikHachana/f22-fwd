@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<head>
+    <title>Rafik's portfolio</title>
+    <link rel="icon" type="image/x-icon" href="res/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- We defer loading the JS files to not block HTML rendering -->
+    <script src="bundle.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,300&display=swap" rel="stylesheet"> 
+
+    <script>
+        /*to prevent a Firefox FOUC bug, this must be here*/
+        let FF_FOUC_FIX;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Rafik Hachana's portfolio</h1>
+        
+        <nav id="menu">
+            <a class="menu-item" href="#intro">Intro</a>
+            <a class="menu-item" href="#skills">Skills</a>
+            <a class="menu-item" href="#experience">IT Experience</a>
+            <a class="menu-item" href="#contact">Contact Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>💁 Intro</h2>
+            <div id="intro-content">
+                <img id="portrait" src="res/portrait.jpg"/>
+                <div id="intro-text">
+                    <p>I am an enthusiastic CS and Data Science student with 4 years of
+                        competitive programming experience, 2 years of software engineering experience,
+                        and 1 year experience in Machine Learning Research.
+                        Currently pursuing a B.Sc. degree in CS
+                        and Data Science in Innopolis University while freelancing
+                        projects and working on ML research.</p>
+                    <p>On a side note, I am also a musician, guitarist and a newbie producer.
+                        More info about my music will be added soon on this website 😜.
+                    </p>
+                    <p>
+                        Recently, I have also been interested in investing into assets and equity. Therefore, I have decided
+                        to display the current <strong>Bitcoin</strong> price for you (maybe it will get you interested in investing). 
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="btc-price-title">
+                    <img src="res/bitcoin.png"/>
+                    <h4>Here is the real-time Bitcoin price:</h4>
+                </div>
+                <div class="quote-content">
+                    <p id="btc-price">Loading ...<span id="btc-currency"></span></p>
+                    <div class="lds-ellipsis" id="btc-price-loader"><div></div><div></div><div></div><div></div></div>
+                </div>
+            </div>            
+        </section>
+        <section id="skills">
+            <h2>🍳 Skills</h2>
+            <div class="skills-list">
+                <ul>
+                    <li>Competitive programming</li>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>Flask</li>
+                    <li>Ruby on Rails</li>
+                    <li>NumPy</li>
+                    <li>Pandas</li>
+                    <li>Git, GitHub actions</li>
+                    <li>Qt</li>
+                </ul>
+                <ul>
+                    <li>TensorFlow</li>
+                    <li>PyTorch</li>
+                    <li>Amazon Web Services</li>
+                    <li>Microsoft Azure</li>
+                    <li>Google Firebase</li>
+                    <li>Heroku</li>
+                    <li>Databases: SQL, PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+        </section>
+        <section id="experience">
+        <h2>🧪 IT Experience</h2>
+            <div class="experience-item">
+                <h3>Machine learning researcher</h3>
+                <strong>Innopolis University (January 2022 - present)</strong>
+                <p>
+                    Working on the optimization of transformer-based models (e.g.
+    BERT) for text complexity classification in NLP. The initial work
+    was part of the Research Project course in Innopolis University,
+    which developed into a research internship. Currently working
+    on the draft of a paper that presents the results of the
+    experiments. Acquired practical experience with the Python
+    ML libraries (TensorFlow, Keras, PyTorch), and deeper
+    theoretical understanding of ML models.
+    Worked on a Systematic Literature Review on the Tradeoff
+    between Fairness, Privacy, and Accuracy when using ML
+    models (mainly GANs) in the context of the SLR course in
+    Innopolis University.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Back-end developer & DevOps</h3>
+                <strong><a href="https://jedsy.com">Jedsy</a> (July 2021 - present)</strong>
+                <p>Working as a freelancing developer in Jedsy, a swiss drone delivery
+    startup with an innovative design aiming to focus on medical
+    emergency deliveries.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Back-end server for a Flashcards WebApp</h3>
+                <strong>Innopolis University (October 2021)</strong>
+                <p>Developed the backend server for a flashcards web application for
+                    language learning. The service supports user authentication, user
+                    subscriptions and some social features. The project was done for
+                    the SSAD course in Innopolis University.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Telegram bot development in Python</h3>
+                <strong>Innopolis (April 2021)</strong>
+                <p>Developed a Telegram bot (collects data for the happiness index
+                    of Innopolis) in a record time in Python using the Telegram API
+                    and MongoDB. (Winning entry for the corresponding hackathon).
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Back-end of P2P Video Call software</h3>
+                <strong>Innopolis (May 2021)</strong>
+                <p>Developed the core (back-end side) of the peer-to-peer Innopolis
+                    Video Chat App using TCP sockets in Python, along with OpenCV,
+                    PyAudio, MongoDB, Redis, multi-processing, multi-threading, and
+                    Electron.js.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Research Intern in Theoretical Computer
+                    Science</h3>
+                <strong>Innopolis University (June 2020 - July 2020)</strong>
+                <p>Worked on the implicit characterization of complexity classes, by
+                    studying theoretical models of computation and proving
+                    theorems about their equivalence under certain conditions.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="contact">
+            <h2>📧 Contact Me</h2>
+            <div>
+                <a class="social-media-link" href="https://www.instagram.com/rafikhachana/">
+                    <img class="social-media-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"
+                        alt="Instagram">
+                </a>
+                <a class="social-media-link" href="https://www.facebook.com/rafikhachana">
+                    <img class="social-media-photo" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png"
+                        alt="Facebook">
+                </a>
+                <a class="social-media-link" href="https://github.com/RafikHachana">
+                    <img class="social-media-photo" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-1024.png"
+                        alt="Github">
+                </a>
+                <a class="social-media-link"  href="mailto:rafikhachana@gmail.com">
+                    <img class="social-media-photo" src="https://cdn0.iconfinder.com/data/icons/picons-social/57/67-gmail-1024.png"
+                    alt="Github"></a>
+            </div>
+        </section>
+    </footer>
+</body>
