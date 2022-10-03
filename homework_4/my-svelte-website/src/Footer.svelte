@@ -1,0 +1,22 @@
+<footer>
+    <section id="contact">
+        <h2>📧 Contact Me</h2>
+        <div>
+            <a class="social-media-link" href="https://www.instagram.com/rafikhachana/">
+                <img class="social-media-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"
+                    alt="Instagram">
+            </a>
+            <a class="social-media-link" href="https://www.facebook.com/rafikhachana">
+                <img class="social-media-photo" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png"
+                    alt="Facebook">
+            </a>
+            <a class="social-media-link" href="https://github.com/RafikHachana">
+                <img class="social-media-photo" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-1024.png"
+                    alt="Github">
+            </a>
+            <a class="social-media-link"  href="mailto:rafikhachana@gmail.com">
+                <img class="social-media-photo" src="https://cdn0.iconfinder.com/data/icons/picons-social/57/67-gmail-1024.png"
+                alt="Github"></a>
+        </div>
+    </section>
+</footer>
