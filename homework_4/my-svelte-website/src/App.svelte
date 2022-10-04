@@ -1,17 +1,25 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
-
+  import type {HeaderMenuItem, Project} from './lib/types';
   import Header from './Header.svelte';
   import Intro from './Intro.svelte';
   import Skills from './Skills.svelte';
   import Experience from './Experience.svelte';
   import Footer from './Footer.svelte';
+  import json_data from './assets/experience.json';
+    import { experience_data } from './assets/experience';
 
-  let menu_items = [
-    {text: "Intro", target: "intro"}
+  let menu_items: HeaderMenuItem[] = [
+    {text: "Intro", target: "intro"},
+    {text: "Skills", target: "skills"},
+    {text: "IT Experience", target: "experience"},
+    {text: "Contact Me", target: "contact"},
   ];
+
+  let projects: Project[] = experience_data;
+  console.log(projects)
+  console.log(json_data)
 </script>
+
 <svelte:head>
   <title>Rafik's portfolio</title>
   <link rel="icon" type="image/x-icon" href="public/favicon.ico">
@@ -19,27 +27,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,300&display=swap" rel="stylesheet"> 
 </svelte:head>
-<Header {menu_items}/>
+
+<Header menu_items={menu_items}/>
+
 <main>
   <Intro></Intro>
   <Skills></Skills>
-  <Experience/>
-  
+  <Experience {projects} />
 </main>
+
 <Footer/>
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>

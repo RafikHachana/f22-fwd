@@ -1,10 +1,11 @@
 <script lang="ts">
-    interface HeaderMenuItem {
-        text: string,
-        target: string
-    }
+    import type {HeaderMenuItem} from './lib/types';
+    import {afterUpdate} from 'svelte';
 
-    let menu_items: HeaderMenuItem[] = [];
+    // const {HeaderMenuItem} = menuItem;
+    export let menu_items: HeaderMenuItem[] = [];
+
+    afterUpdate(() => console.log(menu_items))
 </script>
 
 <header>
