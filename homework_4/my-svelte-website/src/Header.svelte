@@ -1,11 +1,8 @@
+<!-- Header with a Nav menu -->
+
 <script lang="ts">
     import type {HeaderMenuItem} from './lib/types';
-    import {afterUpdate} from 'svelte';
-
-    // const {HeaderMenuItem} = menuItem;
     export let menu_items: HeaderMenuItem[] = [];
-
-    afterUpdate(() => console.log(menu_items))
 </script>
 
 <header>
@@ -18,6 +15,25 @@
 </header>
 
 <style>
+header {
+  background-color: #01161e;
+  display: flex;
+  color: #EFF6E0;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  /* box-shadow: 2px 2px 4px #000000; */
+  position: sticky;
+  top: 0;
+}
 
+#menu {
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  color: #EFF6E0;
+}
 
 </style>

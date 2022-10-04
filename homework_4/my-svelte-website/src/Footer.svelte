@@ -1,3 +1,5 @@
+<!-- Footer with contact info -->
+
 <footer>
     <section id="contact">
         <h2>📧 Contact Me</h2>
@@ -20,3 +22,34 @@
         </div>
     </section>
 </footer>
+
+<style>
+    div {
+  margin: auto;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+h2 {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+footer {
+  background-color: #124559;
+  color: #EFF6E0;
+  margin: 0px;
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.social-media-photo {
+  height: 5em;
+  width: 5em;
+  margin: 1rem;
+
+}
+</style>

@@ -1,4 +1,47 @@
-export const experience_data = [
+// Holds the text data for the websites
+// Better than storing everything in the component files
+
+export const intro_content = [
+    `I am an enthusiastic CS and Data Science student with 4 years of
+    competitive programming experience, 2 years of software engineering experience,
+    and 1 year experience in Machine Learning Research.
+    Currently pursuing a B.Sc. degree in CS
+    and Data Science in Innopolis University while freelancing
+    projects and working on ML research.`,
+    
+    `On a side note, I am also a musician, guitarist and a newbie producer.
+    More info about my music will be added soon on this website 😜.`,
+    
+    `Recently, I have also been interested in investing into assets and equity. Therefore, I have decided
+    to display the current <strong>Bitcoin</strong> price for you (maybe it will get you interested in investing).`
+]
+
+
+export const skills = [
+    "Competitive programming",
+    "C++",
+    "Python",
+    "Django",
+    "Flask",
+    "Ruby on Rails",
+    "NumPy",
+    "Pandas",
+    "Git, GitHub actions",
+    "Qt",
+    "TensorFlow",
+    "PyTorch",
+    "Amazon Web Services",
+    "Microsoft Azure",
+    "Google Firebase",
+    "Heroku",
+    "Databases: SQL, PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "Svelte"
+]
+
+
+export const experience = [
     {
         "title": "Machine learning researcher",
         "context": "Innopolis University (January 2022 - present)",
@@ -72,3 +115,5 @@ export const experience_data = [
         `
     }
 ]
+
+

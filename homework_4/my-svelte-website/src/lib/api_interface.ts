@@ -1,3 +1,5 @@
+// Types for the Bitcoin price API
+
 export interface BitcoinPriceAPIResponse {
     disclaimer: string,
     time: TimeInformation,

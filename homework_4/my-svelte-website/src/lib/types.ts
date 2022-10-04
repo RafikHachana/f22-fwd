@@ -1,3 +1,5 @@
+// Utility types used in the project
+
 export interface HeaderMenuItem {
     text: string,
     target: string

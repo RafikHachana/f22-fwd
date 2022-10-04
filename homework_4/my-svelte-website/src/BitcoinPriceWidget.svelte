@@ -1,9 +1,11 @@
+<!-- Asynchronously fetches the current Bitcoin price and displays it -->
+
 <script lang="ts">
     import type { BitcoinPriceAPIResponse } from './lib/api_interface';
     import { onMount, onDestroy } from 'svelte';
+    import Loader from './lib/Loader.svelte';
     
-
-    // var bitcoin_price: string | null = null;
+    var bitcoin_price: string | null = null;
 
     async function printBTC() {
         // API call
@@ -12,21 +14,66 @@
         return bitcoin_price_info.bpi.USD.rate.slice(0, -2) + " " + bitcoin_price_info.bpi.USD.symbol;
     }
 
-    // onMount(() => {printBTC()});
+    let interval: number | null = null;
+
+    onMount(()=>{
+        interval = window.setInterval(async ()=>{
+            bitcoin_price = await printBTC()
+        }, 2000);
+    });
+
+    onDestroy(()=>{
+        if(interval != null) {
+            clearInterval(interval);
+        }
+    });
+    
 </script>
 
 <div>
     <div class="btc-price-title">
-        <img src="/bitcoin.png"/>
+        <img src="/bitcoin.png" alt="Bitcoin logo"/>
         <h4>Here is the real-time Bitcoin price:</h4>
     </div>
     <div class="quote-content">
-        {#await printBTC()}
-            <p id="btc-price">Loading ...<span id="btc-currency"></span></p>
-            <div class="lds-ellipsis" id="btc-price-loader"><div></div><div></div><div></div><div></div></div>
-        {:then value}
-            <p id="btc-price">{@html value}<span id="btc-currency"></span></p>
-        {/await}
+        {#if bitcoin_price == null}
+            <p id="loading-text">Loading ...</p>
+            <Loader/>
+        {:else}
+            <p id="btc-price">{@html bitcoin_price}</p>
+        {/if}
     </div>
 </div>
 
+<style>
+.quote-content {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-text {
+    padding-right: 1rem;
+    font-style: italic;
+    font-size: x-large;
+
+}
+#btc-price {
+  padding-right: 1rem;
+  font-style: italic;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.btc-price-title {
+display: flex;
+align-items: center;
+}
+
+.btc-price-title>img {
+width: 2.5rem;
+height: 2.5rem;
+padding-right: 1rem;
+}
+</style>

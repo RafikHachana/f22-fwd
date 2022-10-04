@@ -5,8 +5,7 @@
   import Skills from './Skills.svelte';
   import Experience from './Experience.svelte';
   import Footer from './Footer.svelte';
-  import json_data from './assets/experience.json';
-    import { experience_data } from './assets/experience';
+  import { experience, skills, intro_content } from './data';
 
   let menu_items: HeaderMenuItem[] = [
     {text: "Intro", target: "intro"},
@@ -15,9 +14,8 @@
     {text: "Contact Me", target: "contact"},
   ];
 
-  let projects: Project[] = experience_data;
-  console.log(projects)
-  console.log(json_data)
+  let projects: Project[] = experience;
+
 </script>
 
 <svelte:head>
@@ -31,9 +29,33 @@
 <Header menu_items={menu_items}/>
 
 <main>
-  <Intro></Intro>
-  <Skills></Skills>
+  <Intro content={intro_content}/>
+  <Skills {skills} />
   <Experience {projects} />
 </main>
 
 <Footer/>
+
+<style>
+:global(body) {
+  padding: 0px;
+  margin: 0px;
+  box-shadow: 10px 20px #000000;
+  background-color: #AEC3B0;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  background-color: #EFF6E0;
+  color: #01161E;
+  max-width: 50%;
+  margin: auto;
+  padding: 2rem;
+  text-align: justify;
+  margin-bottom: 0px;
+}
+
+:global(main>section) {
+  padding-top: 75px;
+}
+</style>

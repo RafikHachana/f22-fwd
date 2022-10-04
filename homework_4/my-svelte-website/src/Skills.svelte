@@ -1,28 +1,29 @@
+<!-- Makes a list of skills -->
+
+<script lang="ts">
+    export let skills: string[] = [];
+
+    // Defines the maximum vertical length for the skills list
+    // If the list exceeds this length, more columns are used
+    export let max_length: number = 7;
+</script>
+
 <section id="skills">
-            <h2>🍳 Skills</h2>
-            <div class="skills-list">
-                <ul>
-                    <li>Competitive programming</li>
-                    <li>C++</li>
-                    <li>Python</li>
-                    <li>Django</li>
-                    <li>Flask</li>
-                    <li>Ruby on Rails</li>
-                    <li>NumPy</li>
-                    <li>Pandas</li>
-                    <li>Git, GitHub actions</li>
-                    <li>Qt</li>
-                </ul>
-                <ul>
-                    <li>TensorFlow</li>
-                    <li>PyTorch</li>
-                    <li>Amazon Web Services</li>
-                    <li>Microsoft Azure</li>
-                    <li>Google Firebase</li>
-                    <li>Heroku</li>
-                    <li>Databases: SQL, PostgreSQL</li>
-                    <li>MongoDB</li>
-                    <li>Redis</li>
-                </ul>
-            </div>
-        </section>
+    <h2>🍳 Skills</h2>
+    <div>
+        {#each Array(Math.ceil(skills.length / max_length)) as _, i}
+            <ul>
+                {#each skills.slice(i*max_length, (i+1)*max_length) as skill}
+                    <li>{skill}</li>
+                {/each}
+            </ul>
+        {/each}
+    </div>
+</section>
+
+<style>
+
+div {
+  display: flex;
+}
+</style>
